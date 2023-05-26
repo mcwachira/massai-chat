@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aChat App</title>
+</head>
+<body>
+    
+
+        <p>
+            This is a message
+        </p>
+
+        <div id="messages"></div>
+        <form class="messageForm">
+
+            <label for="message"> Send message</label>
+<input type="text" name="message" id="message" class="messageText"/>
+
+<button class="submitBtn" type="submit">  Submit</button>
+        </form>
+
+            <button class="geoLocation" type="submit"> Location</button>
+
+
+<script id="message-template" type="text/html">
+   <div>
+    <p>
+     {{createdAt}} - {{message}}
+    </p>
+   </div>
+</script>
+
+<script id="location-template" type="text/html">
+   <div>
+    <p>
+{{createdAt}}
+    
+        <a href="{{url}}">
+            my location
+               </a>
+
+    </p>
+
+   </div>
+</script>
+ 
+
+    <script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qs@6.11.2/dist/qs.min.js"></script>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/chat.js"></script>
+</body>
+</html>
